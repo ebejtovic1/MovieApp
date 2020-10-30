@@ -1,0 +1,36 @@
+
+
+
+<div>
+  <button class="button" (click)="backClicked()">< BACK</button>
+</div>
+
+
+<div class="card">
+  <iframe *ngIf="movie.video_path!=''" width="500" height="320" [src]="getTrustedUrl(movie.video_path)" frameborder="0" allowfullscreen alt="video">
+  </iframe>
+  <div *ngIf="movie.video_path==''" class="card-image">
+    <img *ngIf="movie.video_path=='' && movie.poster_path.substr(movie.poster_path.length-4)!='null'" [src]="movie.poster_path"/>
+    <img *ngIf="movie.video_path=='' && movie.poster_path.substr(movie.poster_path.length-4)=='null'" src="https://www.brother.com.mm/AP/Handlers/ApHandler.ashx?m=rs&guid=8d068527-2779-4f00-8a1a-8f9cc59e3f39&pr=100"/>
+  </div>
+  <div class="card-text">
+    <h2>{{movie.title}}</h2>
+    <p>{{movie.overview}}</p>
+  </div>
+  <div class="card-stats">
+    <div class="stat">
+      <div class="value"><sup></sup></div>
+      <div class="type"></div>
+    </div>
+    <div class="stat border">
+      <div class="value">{{movie.vote_average}}</div>
+      <div class="type">vote average</div>
+    </div>
+    <div class="stat">
+      <div class="value"></div>
+      <div class="type"></div>
+    </div>
+  </div>
+</div>
+<br>
+

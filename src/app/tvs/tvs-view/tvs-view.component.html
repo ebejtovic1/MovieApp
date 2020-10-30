@@ -1,0 +1,48 @@
+
+<div class="search__container">
+  <input
+  class="search__input"
+  type="text"
+  placeholder="Search.."
+  id="search"
+  [(ngModel)]="searchTVs"
+  (keyup)="save($event)"
+  />
+</div>
+
+<div *ngIf="searchTVs.length<3" class="container">
+  <ng-container *ngFor="
+      let tv of tvs.slice(0,10)
+    ">
+
+      <div [routerLink]="['/showMoreTV', tv.id]" class="card">
+        <div class="img">
+
+          <img *ngIf="tv.poster_path.substr(tv.poster_path.length-4)!='null'" [src]="tv.poster_path">
+          <img *ngIf="tv.poster_path.substr(tv.poster_path.length-4)=='null'" src="https://www.brother.com.mm/AP/Handlers/ApHandler.ashx?m=rs&guid=8d068527-2779-4f00-8a1a-8f9cc59e3f39&pr=100">
+
+        </div>
+        <div class="top-text">
+          <h5>{{ tv.name }}</h5>
+        </div>
+        </div>
+    </ng-container>
+</div>
+
+<div *ngIf="searchTVs.length>=3" class="container">
+  <ng-container *ngFor="
+      let movie of tvs
+    ">
+
+      <div [routerLink]="['/showMoreTV', movie.id]" class="card">
+        <div class="img">
+          <img *ngIf="movie.poster_path.substr(movie.poster_path.length-4)!='null'" [src]="movie.poster_path">
+          <img *ngIf="movie.poster_path.substr(movie.poster_path.length-4)=='null'" src="https://www.brother.com.mm/AP/Handlers/ApHandler.ashx?m=rs&guid=8d068527-2779-4f00-8a1a-8f9cc59e3f39&pr=100">
+
+        </div>
+        <div class="top-text">
+          <h5>{{ movie.name }}</h5>
+        </div>
+        </div>
+    </ng-container>
+</div>

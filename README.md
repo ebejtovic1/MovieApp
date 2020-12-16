@@ -20,7 +20,7 @@ When the application is loaded, it displays the top 10 rated movies/tv shows.
 
 The search field is live and react to any change in the input field.
 
-The search fire a request on the search endpoint from TMDB and not filter the top 10 results.
+The search fires a request on the search endpoint from TMDB and shows us all the results that we are searching for
 
 The search is performed only when there are 3 or more characters in the search bar.
 

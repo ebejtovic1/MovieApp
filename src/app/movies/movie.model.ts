@@ -7,3 +7,5 @@ export interface Movie{
   vote_average: number;
   video_path:string;
 }
+
+

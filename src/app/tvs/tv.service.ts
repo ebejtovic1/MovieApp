@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 export class TvsService {
 
+
   private tvs: TV[] = [];
   private tvsUpdated = new Subject<TV[]>();
 

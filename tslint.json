@@ -122,6 +122,7 @@
         "check-format",
         "allow-pascal-case"
       ]
+
     },
     "whitespace": {
       "options": [

@@ -6,3 +6,5 @@ export interface TV{
   vote_average: number;
   video_path:string;
 }
+
+

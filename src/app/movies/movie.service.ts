@@ -68,7 +68,6 @@ export class MoviesService {
 
   }
 
-
   getPostUpdateListener() {
     return this.moviesUpdated.asObservable();
   }

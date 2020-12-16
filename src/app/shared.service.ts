@@ -13,4 +13,6 @@ export class SharedService {
   nextMessage(message: string) {
     this.search.next(message)
   }
+
 }
+

@@ -8,7 +8,7 @@
   background-color: white;
   width: 500px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
   justify-content: center;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   font-family: roboto;
@@ -28,16 +28,76 @@
   width: 100%;
 }
 
+.forma{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 455px;
+  margin:auto;
+  margin-top: 10px;
+  text-align: center;
+}
+.textChange{
+  width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+
+  text-align: left;
+position: fixed;
+bottom: 0;
+left:0;
+
+
+  -webkit-appearance:  none;
+  width:  auto;
+  min-width:  100px;
+  border-radius:  24px;
+  text-align:  center;
+  padding:  15px 40px;
+  margin-bottom:  5px;
+  background-color:  #ff4081;
+  color:  #fff;
+  font-weight: 530;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  margin-left: 5px;
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13);
+  border:  none;
+  transition:  all .3s ease;
+  outline: 0;
+}
+
 @media screen and (max-width: 650px){
 
   .card{
     justify-content: center;
     width: 300px;
     margin: 0 auto!important;
+    margin-top: 10px!important;
     grid-template-columns: 300px;
-    grid-template-rows: 400px 330px 60px;
+    grid-template-rows: 200px 330px 60px;
     margin: 20px 0;
   }
+  iframe{
+    width: 300px;
+    height: 200px;
+  }
+
+  .forma{
+    width: 260px;
+
+  }
+  .textChange{
+    width: 250px;
+  }
+
 
 }
 

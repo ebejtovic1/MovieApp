@@ -4,6 +4,10 @@ import { MoviesService } from 'src/app/movies/movie.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {Location} from '@angular/common';
+import { AuthService } from '../../auth/auth.service';
+import { Subscription } from 'rxjs';
+
+
 @Component({
   selector: 'app-mshow-more',
   templateUrl: './mshow-more.component.html',
@@ -11,14 +15,36 @@ import {Location} from '@angular/common';
 })
 export class MshowMoreComponent implements OnInit {
   public safeURL: SafeResourceUrl;
+
   constructor(private route: ActivatedRoute,
-    private jobsService: MoviesService, private _sanitizer: DomSanitizer, private _location: Location) {
+    private jobsService: MoviesService, private _sanitizer: DomSanitizer, private _location: Location, private authService: AuthService) {
      }
+     userIsAuthenticated = false;
+     userId: string;
+  private authStatusSub: Subscription;
 
 
      backClicked() {
+       console.log(this.movie.title);
       this._location.back();
     }
+
+    changes(){
+
+      var FileSaver = require('file-saver');
+
+
+
+
+      var inputValue = (<HTMLInputElement>document.getElementById("change")).value;
+      this.movie.title= inputValue;
+      let jsonData = JSON.stringify(this.movie);
+      var blob = new Blob([jsonData], {type: "text/plain;charset=utf-8"});
+      FileSaver.saveAs(blob, "change.json");
+
+    }
+
+
 
 movie: Movie = {
   id: -1,
@@ -34,7 +60,9 @@ private movieId: number;
   isLoading = false;
 
   ngOnInit(): void {
+    this.userId = this.authService.getUserId();
 
+    this.userIsAuthenticated = this.authService.getIsAuth();
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
 
       if (paramMap.has('movieId')) {
@@ -75,3 +103,4 @@ private movieId: number;
    }
 
 }
+

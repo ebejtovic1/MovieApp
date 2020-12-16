@@ -18,8 +18,7 @@ export class TvsViewComponent implements OnInit {
   save(event: any) {
     this.newSearch(event.target.value);
     var root=this;
-    clearTimeout(timer);
-    timer=setTimeout(function(){
+
       lastSearch=event.target.value;
 
       root.newSearch(event.target.value);
@@ -43,7 +42,7 @@ export class TvsViewComponent implements OnInit {
       });
 
         }
-      }, 1000);
+
 
   }
 

@@ -23,17 +23,17 @@ html, body{
   flex-wrap: wrap;
   width: 80%;
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: center;
 
 }
 
 .card{
-  height: 700px;
-  max-width: 500px;
-  min-width: 500px;
   font-family: roboto;
-  border-radius: 18px;
+
+  border-radius: 6px;
+  width: 300px;
+  height: 500px;
   background: white;
   text-align: center;
   margin: 0 10px;
@@ -44,16 +44,13 @@ html, body{
 }
 .img{
   margin: 0 auto;
-  border-top-left-radius: 15px!important;
-  border-top-right-radius: 15px;
+
 
 }
 .card .img{
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+
   margin:0 auto;
-  height: 95%;
-  width: 100%;
+
 }
 .card:hover{
   transform: scale(1.15);
@@ -80,24 +77,18 @@ html, body{
     width: 40%;
     height: 40%;
     margin: 20px 0;
-  }
-  .card .img{
-    width: 40%;
 
   }
-  .card.top-text{
-    font-size: 5px;
-    width: 40%;
-  }
+
+
 }
 
 .card .img img{
   height: 100%;
-  border-top-left-radius: 15px!important;
-  border-top-right-radius: 15px;
   width: 100%;
   object-fit: cover;
 }
+
 
 .card .top-text{
   font-family: Georgia, 'Times New Roman', Times, serif;

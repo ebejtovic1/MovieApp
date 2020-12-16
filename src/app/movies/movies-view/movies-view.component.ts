@@ -5,8 +5,8 @@ import { Movie } from 'src/app/movies/movie.model';
 import { HostListener } from '@angular/core';
 import { last } from 'rxjs/operators';
 
+
 import { SharedService } from 'src/app/shared.service';
-var timer=0;
 var lastSearch='';
 @Component({
   selector: 'app-movies-view',
@@ -20,9 +20,7 @@ export class MoviesViewComponent implements OnInit, OnDestroy {
     this.newSearch(event.target.value);
 
     var root=this;
-    clearTimeout(timer);
-    timer=setTimeout(function(){
-      lastSearch=event.target.value;
+         lastSearch=event.target.value;
 
           root.newSearch(event.target.value);
 
@@ -47,7 +45,6 @@ export class MoviesViewComponent implements OnInit, OnDestroy {
       });
 
         }
-      }, 1000);
 
   }
 

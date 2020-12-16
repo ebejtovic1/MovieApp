@@ -33,14 +33,24 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   height: 35px;
-  border-radius: 4px;
-  border: 2px solid #008CBA;
+
 }
 
-.button:hover {
-  color: white;
-  background-color: #008CBA!important;
-}
+
+a,
+  a:visited,
+  a:hover {
+    color:  #125699;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  margin-left: 15px;
+  }
+
+  a:hover {
+    color: #ff4081;
+    transform: scale(1.15);
+  }
 
   .toolbar {
 
@@ -56,15 +66,20 @@
     color: #1256b0;;
     font-weight: 600;
   }
+  .buttonLog{
+    position: absolute;
+    right: 0;
+  }
 
 </style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <div class="spacer"></div>
-  <button class="button" style="margin-right: 2px;" routerLink="Movies">Movies</button>
-  <button class="button" routerLink="/">TV Shows</button>
-
+  <a style="margin-right: 2px;" routerLink="Movies">Movies</a>
+  <a routerLink="/">TV Shows</a>
+  <button class="buttonLog" *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent">Log In</button>
+  <button class="buttonLog" *ngIf="userIsAuthenticated" (click)="onLogout()" mat-button> Log Out</button>
 
 </div>
 

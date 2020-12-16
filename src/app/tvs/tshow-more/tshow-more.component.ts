@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { TvsService} from 'src/app/tvs/tv.service';
 import { TV } from 'src/app/tvs/tv.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {Location} from '@angular/common';
+import { AuthService } from '../../auth/auth.service';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-tshow-more',
   templateUrl: './tshow-more.component.html',
@@ -12,12 +14,25 @@ import {Location} from '@angular/common';
 })
 export class TshowMoreComponent implements OnInit {
   public safeURL: SafeResourceUrl;
-  constructor(private route: ActivatedRoute, private tvsService: TvsService, private _sanitizer: DomSanitizer, private _location: Location) { }
+  constructor(private route: ActivatedRoute, private tvsService: TvsService, private _sanitizer: DomSanitizer, private _location: Location, private authService: AuthService) { }
 
+  userIsAuthenticated = false;
+     userId: string;
+  private authStatusSub: Subscription;
   backClicked() {
     this._location.back();
   }
 
+  changes(){
+
+    var FileSaver = require('file-saver');
+    var inputValue = (<HTMLInputElement>document.getElementById("change")).value;
+    this.tv.name= inputValue;
+    let jsonData = JSON.stringify(this.tv);
+    var blob = new Blob([jsonData], {type: "text/plain;charset=utf-8"});
+    FileSaver.saveAs(blob, "change.json");
+
+  }
 
 tv: TV = {
   id: -1,
@@ -30,6 +45,9 @@ tv: TV = {
 private tvId: number;
   isLoading = false;
   ngOnInit(): void {
+    this.userId = this.authService.getUserId();
+
+    this.userIsAuthenticated = this.authService.getIsAuth();
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
 
       if (paramMap.has('tvId')) {

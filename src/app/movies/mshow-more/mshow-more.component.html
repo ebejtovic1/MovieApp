@@ -1,8 +1,11 @@
 
+<div *ngIf="userIsAuthenticated" class="forma">
+  <form>
+    <label style="color: #125699;">Change the title of the movie</label>
+    <input class="textChange" type="text" id="change" placeholder="New title..">
 
-
-<div>
-  <button class="button" (click)="backClicked()">< BACK</button>
+    <button class="button" (click)="changes()">Confirm</button>
+  </form>
 </div>
 
 
@@ -33,4 +36,8 @@
   </div>
 </div>
 <br>
+
+<div>
+  <button class="btn btn-primary" (click)="backClicked()">< BACK</button>
+</div>
 

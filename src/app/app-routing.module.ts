@@ -4,6 +4,8 @@ import { MoviesViewComponent } from 'src/app/movies/movies-view/movies-view.comp
 import { TvsViewComponent } from 'src/app/tvs/tvs-view/tvs-view.component';
 import { MshowMoreComponent} from 'src/app/movies/mshow-more/mshow-more.component';
 import { TshowMoreComponent} from 'src/app/tvs/tshow-more/tshow-more.component';
+import { LoginComponent } from "./auth/login/login.component";
+import { AuthGuard } from "./auth/auth.guard";
 const routes: Routes = [
   {
     path: 'Movies', component: MoviesViewComponent
@@ -19,7 +21,10 @@ const routes: Routes = [
   {
     path: '',
     component: TvsViewComponent,
-  }
+  } ,
+  {
+    path: "login", component: LoginComponent
+  },
 
 ];
 

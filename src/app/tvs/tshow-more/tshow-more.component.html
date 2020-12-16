@@ -1,13 +1,15 @@
+<div class="block">
+  <div *ngIf="userIsAuthenticated" class="forma">
+    <form>
+      <label style="color: #125699;">Change the title of the tv show</label>
+      <input class="textChange" type="text" id="change" placeholder="New title..">
 
-
-
-<div>
-  <button class="button" (click)="backClicked()">< BACK</button>
-</div>
-
+      <button class="button" (click)="changes()">Confirm</button>
+    </form>
+  </div>
 
 <div class="card">
-  <iframe *ngIf="tv.video_path!=''" width="500" height="320" [src]="getTrustedUrl(tv.video_path)" frameborder="0" allowfullscreen alt="video">
+  <iframe class="video" *ngIf="tv.video_path!=''" width="500" height="320" [src]="getTrustedUrl(tv.video_path)" frameborder="0" allowfullscreen alt="video">
   </iframe>
   <div *ngIf="tv.video_path==''" class="card-image">
 
@@ -35,4 +37,8 @@
   </div>
 </div>
 <br>
+
+<div>
+  <button class="btn btn-primary" (click)="backClicked()">< BACK</button>
+</div>
 

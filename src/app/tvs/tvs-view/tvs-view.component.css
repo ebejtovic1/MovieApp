@@ -81,6 +81,21 @@ html, body{
   }
 
 
+
+
+}
+
+h1{
+  margin: 0 auto;
+  margin-top: 40px;
+    color: #ff4081;
+    width: 100px;
+    font-weight: 530;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+
+
+
 }
 
 .card .img img{
@@ -101,7 +116,7 @@ html, body{
 
 .search__container{
   padding-top: 64px;
-  max-width: 1040px;
+  max-width: 1300px;
   margin: auto;
 
 }

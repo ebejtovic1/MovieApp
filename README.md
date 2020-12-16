@@ -10,6 +10,7 @@
 # Description
 The app have the functionalities of displaying the shows and the movies, a search function for both, and a detail view for individual items.
 Also, when the user is authenticated (via Log in) he has the ability to change the movie/tv show title. Changes are saved automatically to a JSON file on the hard disk.
+
 API authentication key: 67a4974b455f38fac6d23b0e9cf0685d
 
 Rest API source: https://developers.themoviedb.org/3

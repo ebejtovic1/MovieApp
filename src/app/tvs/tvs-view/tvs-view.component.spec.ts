@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TvsViewComponent } from './tvs-view.component';
 
@@ -6,7 +6,7 @@ describe('TvsViewComponent', () => {
   let component: TvsViewComponent;
   let fixture: ComponentFixture<TvsViewComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TvsViewComponent ]
     })

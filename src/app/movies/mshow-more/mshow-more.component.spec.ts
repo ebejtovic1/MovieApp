@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MshowMoreComponent } from './mshow-more.component';
 
 describe('MshowMoreComponent', () => {
   let component: MshowMoreComponent;
   let fixture: ComponentFixture<MshowMoreComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MshowMoreComponent ]
     })

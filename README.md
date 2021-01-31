@@ -31,3 +31,6 @@ When the user clicks on a specific MOVIE/TV SHOW, he is taken to the details vie
 The Detailed View of the Movie/TV Show should show the cover image on top and in case of Movies/TV Shows which have a trailer should show the trailer video instead of the cover image. Below the image/trailer some basic information regarding the selected Movie/TV Show should be shown.
 
 The Back Button should return the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show.
+
+Here is the link for the app: https://epic-shannon-0fe115.netlify.app/
+Here is the video for the app: https://www.youtube.com/watch?v=X3rauKr79hg&feature=youtu.be 
